@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  vpn:
+    image: ghcr.io/bubuntux/nordvpn
+    cap_add:
+      - NET_ADMIN               # Required
+      - NET_RAW                 # Required
+    environment:                # Review https://github.com/bubuntux/nordvpn#environment-variables
+#      - USER=user@email.com     # Required
+#      - "PASS=pas$word"         # Required
+      - TOKEN=ce9fa6cbc5f3455473bb68846dd344ee131beebfaff30446f02c1699f06b4533
+      - CONNECT=United_States
+      - TECHNOLOGY=OpenVPN
+      - NETWORK=192.168.88.0/24  # So it can be accessed within the local network
+    ports:
+      - 8080:8080
+#    sysctls:
+#      - net.ipv6.conf.all.disable_ipv6=1  # Recomended if using ipv4 only
+  torrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    network_mode: service:vpn
+    depends_on:
+      - vpn
