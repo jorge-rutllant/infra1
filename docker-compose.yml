@@ -32,6 +32,6 @@ services:
       - VERSION=docker
       - PLEX_CLAIM= claim-zQ6eUTszrD7nxYwx2Gi7
     volumes:
-      - ./runtimes/plex/data:/config
+      - /home/jorge/docker/infra1/infra1/runtimes/plex/data:/config
       - /home/jorge/media/video/peliculas:/movies
     restart: unless-stopped
