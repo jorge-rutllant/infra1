@@ -32,7 +32,7 @@ services:
       - VERSION=docker
       - PLEX_CLAIM= claim-zQ6eUTszrD7nxYwx2Gi7
     volumes:
-      - /home/jorge/docker/infra1/infra1/runtimes/plex/data:/config
+      - /home/jorge/repos/infra1/runtimes/plex/data:/config
       - /home/jorge/media/video/peliculas:/movies
       - type: bind
         source: .
