@@ -130,3 +130,5 @@ dmypy.json
 
 # exclusiones jorge
 runtimes/
+singit/
+
