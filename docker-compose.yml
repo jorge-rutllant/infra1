@@ -35,7 +35,4 @@ services:
       - /home/jorge/repos/infra1/runtimes/plex/data:/config
       - /home/jorge/media/video/peliculas:/movies
       - .:/dirnuevo
-      - type: bind
-        source: .
-        target: /prueba
     restart: unless-stopped
