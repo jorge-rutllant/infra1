@@ -34,5 +34,7 @@ services:
     volumes:
       - /home/jorge/docker/infra1/infra1/runtimes/plex/data:/config
       - /home/jorge/media/video/peliculas:/movies
-      - .:/prueba
+      - type: bind
+        source: .
+        target: /prueba
     restart: unless-stopped
